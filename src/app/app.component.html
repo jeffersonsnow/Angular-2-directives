@@ -1,3 +1,27 @@
-<h1>
-  {{title}}
-</h1>
+<h1>Attribute Directives</h1>
+<h2>ngClass / ngStyle</h2>
+<div [ngClass]="{border: true, background: true}"></div><!-- This is the non-directive way but can achieve the same result-->
+<div [class.border]="true"></div> 
+<div [class.background]="true"></div>
+<div [ngStyle]="{'background-color': 'red'}"></div>
+<hr>
+<h2>Custom Attribute Directive</h2>
+<div [highlight]="'blue'" [defaultColor]="'red'">Some Text</div>
+<hr>
+<h2>*ngIf</h2>
+<div *ngIf="switch">Conditional Text</div>
+<button (click)="onSwitch()">Switch</button>
+<h2>*ngFor</h2>
+<ul>
+  <li *ngFor="let item of items; let i = index">{{item}} - (Index: {{i}})</li>
+<ul>
+<hr>
+<h2>ngSwitch (no *)</h2>
+<div [ngSwitch]="value">
+  <p *ngSwitchCase="10">10</p>
+  <p *ngSwitchCase="100">100</p>
+  <p *ngSwitchDefault>Default</p>
+</div>
+<h2>Unless Custom Directive</h2>
+<div *unless="switch">Conditional Text</div>
+<br><br><br><br><br><br><br>
